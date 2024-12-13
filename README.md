@@ -6,7 +6,7 @@ This repository has an implementation of experiments performed in the master the
 @mastersthesis{kim2024opensetovr,
   title={Improved Losses for One-vs-Rest Classifiers in Open-Set Problems},
   author={Hyeongkyun Kim},
-  school= {AIML Group, University of Zurich},
+  school={AIML Group, University of Zurich},
   year={2024}
 }
  ```
