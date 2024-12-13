@@ -1,6 +1,6 @@
 # OpenSet OvR Model with Loss Weighting
 
-This repository has an implementation of experiments performed in the master thesis "Improved Losses for One-vs-Rest Classifiers in Open-Set Problems" by Hyeongkyun Kim at AIML Group at University of Zürich in 2024. You can find a paper in [TBD](sdf).
+This repository has an implementation of experiments performed in the master thesis "Improved Losses for One-vs-Rest Classifiers in Open-Set Problems" by Hyeongkyun Kim at AIML Group at University of Zürich in 2024. You can find a paper in [here](sdf).
 
 ``` 
 @mastersthesis{kim2024opensetovr,
@@ -45,25 +45,26 @@ The pre-computed protocol files can be found at ```./data/LargeScale/protocols``
 
 ## Training
 
-Training the model can be performed by using ```training.py``` with the configuration file ``` train.yaml ```.
+Training the model can be performed by using ```training.py``` with the configuration file ``` ./config/train.yaml ```.
 
 ```
-python -u ./training.py -cf [config] -s [seed] -g [gpu] &> training.output &
+python -u ./training.py -s [seed] -g [gpu] &> training.output &
 ```
-where ```config``` is the file path of the configuration file (e.g., *./config/train.yaml*) and  ```seed``` the random seed, ```gpu``` can be used when GPU is available.
+where  ```seed``` the random seed and ```gpu``` can be used when GPU is available. 
 
 ## Evaluation
 
-Training the model can be performed by using ```evaluation.py``` with the configuration file ``` eval.yaml ```.
+Model Evaluation can be performed by using ```evaluation.py``` with the configuration file ``` ./config/eval.yaml ```.
 
 ```
-python -u ./evaluation.py -cf [config] -s [seed] -g [gpu] &> evaluation.output &
+python -u ./evaluation.py -s [seed] -g [gpu] &> evaluation.output &
 ```
-where ```config``` is the file path of the configuration file (e.g., *./config/eval.yaml*) and  ```seed``` the random seed, ```gpu``` can be used when GPU is available.
+where ```seed``` the random seed and ```gpu``` can be used when GPU is available.
 
-### result
-``` results-large.ipynb ```, ``` results-small.ipynb ```
+## Results
 
+### for Small-Scale
+Evauation results and related plots can be found in ``` results-small.ipynb ```.
 
-
-<!-- ```tensorboard --logdir ./_models``` -->
+### for Large-Scale
+Evauation results and related plots can be found in ``` results-large.ipynb ```.

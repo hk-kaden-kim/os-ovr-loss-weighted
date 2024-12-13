@@ -1,0 +1,16 @@
+tmp*
+*.err
+*.pyc
+**/**/__pycache__/.
+__pycache__
+*.rst
+
+results/largescale_1
+results/largescale_2
+results/largescale_3
+results/smallscale
+
+Logs
+_tmp
+_scripts
+_images
