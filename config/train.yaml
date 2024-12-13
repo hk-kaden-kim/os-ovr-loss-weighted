@@ -1,0 +1,52 @@
+##########################################
+# Training Setup
+##########################################
+scale: smallscale   # smallscale / largescale_1 / largescale_2 / largescale_3
+name: LeNet         # LeNet or LeNet... / ResNet_50 or ResNet_50... / LeNet_plus_plus
+approach: OvR       # SoftMax / EOS / OvR
+
+##########################################
+# Dataset Setup
+##########################################
+data: 
+  train_neg_size: 0 # -1 for using all. SmallScale : < 42000 (42240)  LargeScale_2 : < 60000 (60689)
+  smallscale:
+    root: /local/scratch/hkim # EMNIST path
+    split_ratio: 0.8
+    label_filter: [-1]    # [-1] for using all labels. e.g. [0,1] only using 0 and 1 class data
+  largescale:
+    root: /local/scratch/datasets/ImageNet/ILSVRC2012 # ILSVRC2012 path
+    protocol: /home/user/hkim/UZH-MT/os-ovr-loss-weighted/data/LargeScale # ImageNet Protocol root path
+
+##########################################
+# Loss Setup
+##########################################
+loss:
+  eos:
+    unkn_weight: 1
+  ovr:
+    mode: # (Scale) : (Neg 0)/(Neg All)
+      # C: 'batch'   # Small : 'global' / 'batch'     Large : 'global' / 'batch'
+      # F: 1          # Small : 2 / 1           Large : 1 / 3            
+      # H: 0.4       # Small : 0.4 / 0.2         Large : 0.2 / 0.2
+
+##########################################
+# Archtecture Setup
+##########################################
+arch:
+  feat_dim: -1    # -1 for using default value.
+
+##########################################
+# Training Detail Setup
+##########################################
+num_workers: 5      # Dataloader number of workers
+batch_size: 
+  smallscale: 128 # 128
+  largescale: 64  # batch size is 64 because of the memory constraint.
+epochs:
+  smallscale: 70 # 70
+  largescale: 120 # 120
+opt:    # Adam optimizer
+  lr: 1.e-3  
+training_debug_1: False     # Check featrue space. Only with LeNet++
+training_debug_2: False     # Check weights and gradient
