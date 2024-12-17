@@ -279,6 +279,7 @@ def plot_metrics_s(data_info_base, data_info_ovr, labels, results_root,
             plt.plot(res, label=labels[i], marker='o')
 
         plt.legend()
+        if 'FPR' in m: plt.ylim((0.0005,0.12))
         plt.xlim((-0.5,4.5))
         plt.xticks(range(len(data_info_ovr[i])), ['0','10k','20k','30k','40k'])
         plt.xlabel('# of Negatives in Training')
@@ -540,10 +541,10 @@ def plot_score_dist(data_info, bins, colors, title, results_root, figsize=(10,3)
         print(target_score_hist[:4], non_target_max_score_hist[:4])
 
         if plot_neg:
-            plt.bar(center, neg_max_score_hist, color = colors[2], label='Negative', width=bins[1]-bins[0],edgecolor='black')
-        plt.bar(center, unkn_max_score_hist, color = colors[3],label='Unknown', width=bins[1]-bins[0],edgecolor='black')
+            plt.bar(center, neg_max_score_hist, color = colors[2], label='Negative', width=bins[1]-bins[0],edgecolor='black',hatch='//')
+        plt.bar(center, unkn_max_score_hist, color = colors[3],label='Unknown', width=bins[1]-bins[0],edgecolor='black',hatch='//')
         plt.bar(center, non_target_max_score_hist, color = colors[1], label='Non-target', width=bins[1]-bins[0],edgecolor='black')
-        plt.bar(center, target_score_hist, color = colors[0], label='Target', width=bins[1]-bins[0],edgecolor='black', hatch='//')
+        plt.bar(center, target_score_hist, color = colors[0], label='Target', width=bins[1]-bins[0],edgecolor='black')
 
         plt.ylim(ylim)
         plt.xlabel('score')
