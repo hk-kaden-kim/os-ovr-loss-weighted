@@ -1,6 +1,6 @@
 # OpenSet OvR Model with Loss Weighting
 
-This repository has an implementation of experiments performed in the master thesis "Improved Losses for One-vs-Rest Classifiers in Open-Set Problems" by Hyeongkyun Kim at AIML Group at the University of Zürich in 2024. You can find a paper in [here](https://seafile.ifi.uzh.ch/f/5c79a0dfef5d4293a5c7/).
+This repository has an implementation of experiments performed in the master thesis "Improved Losses for One-vs-Rest Classifiers in Open-Set Problems" by Hyeongkyun Kim at [AIML Group](https://www.ifi.uzh.ch/en/aiml.html) at the University of Zürich in 2024. You can find a paper in [here](https://seafile.ifi.uzh.ch/f/5c79a0dfef5d4293a5c7/).
 
 ``` 
 @mastersthesis{kim2024opensetovr,
@@ -69,3 +69,11 @@ Evaluation results and related plots can be found in ``` results-small.ipynb ```
 
 ### for Large-Scale
 Evaluation results and related plots can be found in ``` results-large.ipynb ```.
+
+
+## Contacts
+Hyeongkyun Kim - [@hk-kaden-kim](https://github.com/hk-kaden-kim) | hyeongkyun.kim@uzh.ch | kreative2hk@gmail.com
+
+Prof. Dr. Manuel Günther - abdallah@ibk.baug.ethz.ch
+
+Salman Mohammad - salman@ifi.uzh.ch
