@@ -8,6 +8,7 @@ This repository has an implementation of experiments performed in the master the
   author={Hyeongkyun Kim},
   school={AIML Group, University of Zurich},
   year={2024}
+  link={https://seafile.ifi.uzh.ch/f/5c79a0dfef5d4293a5c7/}
 }
  ```
 
